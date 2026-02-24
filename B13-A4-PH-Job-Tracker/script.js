@@ -34,7 +34,34 @@ function renderJobs() {
          container.classList.remove('hidden');
         emptyState.classList.add('hidden');
 
+       filteredJobs.forEach(job => {
+            container.innerHTML +=
+
+ `<div class="card bg-white shadow-xl border border-gray-100 p-6 hover:scale-[1.02] transition-transform">
+                <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">${job.company}</h3>
+                            <p class="text-blue-600 font-medium">${job.pos}</p>
+                        </div>
+                        <button onclick="deleteJob(${job.id})" class="btn btn-ghost btn-sm text-red-400">✕</button>
+                    </div>
+
+                    <div class="my-4 text-sm text-gray-500 space-y-1">
+                        <p>📍 ${job.loc} | 💼 ${job.type}</p>
+                        <p>💰 Salary: ${job.salary}</p>
+                        <p class="italic">"${job.desc}"</p>
+                    </div>
+ <div class="card-actions flex gap-2">
+                        <button onclick="updateStatus(${job.id}, 'interview')" class="btn btn-sm flex-1 ${job.status === 'interview' ? 'btn-warning' : 'btn-outline'}">Interview</button>
+                        <button onclick="updateStatus(${job.id}, 'rejected')" class="btn btn-sm flex-1 ${job.status === 'rejected' ? 'btn-error' : 'btn-outline'}">Rejected</button>
+ </div>
+</div>
+            `;
+        });
+                    
     }
+}
 
-
+function updateStatus(id, status) {
+    
 }

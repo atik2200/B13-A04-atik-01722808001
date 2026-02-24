@@ -93,4 +93,10 @@ function switchTab(tab, el) {
     renderJobs();
 }
 
+function updateDashboard() {
+        document.getElementById('total-jobs-count').innerText = jobs.length;
+        document.getElementById('interview-jobs-count').innerText = jobs.filter(j => j.status === 'interview').length;
+        document.getElementById('rejected-jobs-count').innerText = jobs.filter(j => j.status === 'rejected').length;
+}
 
+init();

@@ -13,4 +13,28 @@ let jobs = [
 
 let currentTab = "all";
 
+function init() {
+    renderJobs();
+    updateDashboard();
+}
+    
+function renderJobs() {
+    const container = document.getElementById('jobs-container');
+     const emptyState = document.getElementById('empty-state');
+         const filteredJobs = currentTab === 'all' ? jobs : jobs.filter(j => j.status === currentTab);
+    document.getElementById('tab-job-count').innerText = `${filteredJobs.length} Jobs`;
+    container.innerHTML = "";
 
+    if (filteredJobs.length === 0) {
+        container.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+    } 
+    
+    else {
+         container.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+
+    }
+
+
+}

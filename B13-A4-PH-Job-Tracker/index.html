@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B13-A4-PH-Job-Tracker</title>
+    <title>Home</title>
+    <!-- tailwindcss=daisyui css -->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style>
+        body { font-family: 'Inter', sans-serif; }
+</style>
 </head>
 <body>
+    <header class="py-4 container mx-auto">
+        <div>
+            <h1 class="text-[#002C5C] text-3xl font-bold mb-8 ">Job Application Tracker</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-gray-500 text-sm font-medium mb-2">Total</p>
+                <h2 id="total-count" class="text-[#002D5B] text-4xl font-bold">8</h2>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-gray-500 text-sm font-medium mb-2">Interview</p>
+                <h2 id="interview-count" class="text-[#10B981] text-4xl font-bold">0</h2>
+            </div>
+
+
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <p class="text-gray-500 text-sm font-medium mb-2">Rejected</p>
+                <h2 id="rejected-count" class="text-[#EF4444] text-4xl font-bold">0</h2>
+            </div>
+
+        </div>
+        </div>
+         <hr class="border-gray-200 mb-10">
+</header>
+
+
     
 </body>
 </html>

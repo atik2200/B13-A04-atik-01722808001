@@ -65,3 +65,32 @@ function renderJobs() {
 function updateStatus(id, status) {
     
 }
+
+
+function updateStatus(id, newStatus) {
+    jobs = jobs.map(job => {
+        if (job.id === id) {
+            return { ...job, status: job.status === newStatus ? 'all' : newStatus };
+        }
+        return job;
+    });
+    renderJobs();
+    updateDashboard();
+}
+
+
+function deleteJob(id) {
+    jobs = jobs.filter(job => job.id !== id);
+    renderJobs();
+    updateDashboard();
+}
+
+
+function switchTab(tab, el) {
+    currentTab = tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+    el.classList.add('tab-active');
+    renderJobs();
+}
+
+
